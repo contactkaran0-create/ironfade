@@ -118,3 +118,4 @@ Body Font: Inter Tight
 
 This project is open for learning, inspiration, and portfolio use.  
 Feel free to modify and adapt it for personal or client projects.
+Deployed with nginx on WSL.
