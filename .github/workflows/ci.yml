@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code lo
+        uses: actions/checkout@v4
+
+      - name: Docker image banao
+        run: docker build -t ironfade:ci .
+
+      - name: Container chalao
+        run: docker run -d --name test -p 8080:80 ironfade:ci
+
+      - name: Site check karo
+        run: |
+          sleep 3
+          curl -fsS http://localhost:8080 > /dev/null && echo "Site OK"
